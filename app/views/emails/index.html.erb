@@ -1,0 +1,25 @@
+<h1>Emails#index</h1>
+<div class="container">
+	<%= link_to "RECEVOIR UN EMAIL", emails_path, method: "post", class: "btn btn-success btn-block", remote: true %>
+	<div class="row">
+
+		<div class="col-6">
+			<h3>ALL EMAILS</h3>
+			<div id="emails-list" class="list-group">
+				<% @emails.each do |each_email| %>
+					<%= link_to each_email.object, email_path(each_email.id), class: "list-group-item p-0", id: "email-#{each_email.id.to_s}", remote: true %>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="col-6">
+			<h3>SELECTED EMAIL</h3>
+			<div class="container-fluid border">
+				<div id="show-col" class="container-fluid border p-0">
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

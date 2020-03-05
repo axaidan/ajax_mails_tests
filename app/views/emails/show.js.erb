@@ -1,0 +1,7 @@
+preExisting = document.getElementById("pre-existing");
+
+if (preExisting !== null) {
+	preExisting.remove();
+}
+
+document.getElementById("show-col").insertAdjacentHTML("beforeend", "<%= j render 'show_email', email: @email %>");
